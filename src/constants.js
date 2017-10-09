@@ -1,0 +1,17 @@
+module.exports = {
+  SITE_BASE_URL: process.env.TEST_URL,
+  SELENIUM_SERVICE: process.env.SELENIUM_HOST || 'hub',
+  SELENIUM_PORT: process.env.SELENIUM_PORT || 4444,
+  SILENT: !process.env.VERBOSE || true,
+  STEP_DIR: '/app/src/steps',
+  REPORT_OUTPUT_DIR: `/app/output/report`,
+  SCREEN_OUTPUT_DIR: `/app/output/screenshots`,
+  CUSTOM_STEP_DIR: '/app/custom/steps',
+  PAGES_DIR: '/app/custom/pages',
+  FEATURE_DIR: '/app/custom/features',
+  REPORT_THEME: process.env.REPORT_THEME || 'simple',
+  APP_VERSION: process.env.APP_VERSION || '0.1.0',
+  TEST_ENVIRONMENT: process.env.TEST_ENVIRONMENT || 'DEVELOPMENT',
+  BROWSER: process.env.BROWSER || 'Chrome',
+  PLATFORM: process.env.PLATFORM || 'Linux',
+}

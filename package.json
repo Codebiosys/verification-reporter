@@ -1,0 +1,35 @@
+{
+  "name": "verification-reporter",
+  "version": "0.1.0",
+  "description": "Verification Report Generation for Clinical Systems",
+  "author": "Codebiosys, Inc",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "verify": "nightwatch -c /app/src/nightwatch.config",
+    "report": "node /app/src/report.js"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "bluebird": "^3.5.0",
+    "chai": "^4.1.2",
+    "cucumber": "^3.0.3",
+    "cucumber-html-reporter": "^3.0.4",
+    "dotenv": "^4.0.0",
+    "nightwatch": "^0.9.16",
+    "nightwatch-cucumber": "^8.2.2"
+  }
+}

@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  verify:
+    build: .
+    environment:
+      - TEST_URL=http://www
+      - SELENIUM_HOST=selenium_hub
+      - SELENIUM_PORT=4444
+      - REPORT_THEME=foundation
+      - VERBOSE=1
+
+    depends_on:
+      - www
+      - selenium_hub
+    volumes:
+      - ./src:/app/src
+      - ./features:/app/features
+      - ./output:/app/output
+    links:
+      - selenium_hub:selenium_hub
+
+  #
+  # Browser virtualization integration testing
+  #
+  selenium_hub:
+    image: selenium/standalone-chrome-debug
+    privileged: true
+    depends_on:
+      - www
+    ports:
+      - "4444:4444"
+      - "5900:5900"
+    volumes:
+      - "uploads:/uploads"
+volumes:
+  uploads:
