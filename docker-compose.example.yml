@@ -14,9 +14,8 @@ services:
       - www
       - selenium_hub
     volumes:
-      - ./src:/app/src
-      - ./features:/app/features
-      - ./output:/app/output
+      - ./features:/app/custom/features
+      - ./output:/app/custom//output
     links:
       - selenium_hub:selenium_hub
 
