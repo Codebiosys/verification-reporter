@@ -2,7 +2,7 @@
   "name": "verification-reporter",
   "version": "0.1.0",
   "description": "Verification Report Generation for Clinical Systems",
-  "author": "Codebiosys, Inc",
+  "author": "CodeBiosys, Inc.",
   "license": "MIT",
   "private": true,
   "scripts": {
