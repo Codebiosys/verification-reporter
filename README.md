@@ -39,14 +39,17 @@ To use Verification Reporter, you should first be familiar with [Docker](https:/
   **Note the asterisk in the "ACTIVE" column.**
 
 3. Update the docker-compose.yml:
-  Either use the docker-compose.yml example included, or update your own docker-compose to include a selenium_hub, and the verify service.
+  Either use the docker-compose.yml example included, or update your own
+  docker-compose to include a selenium_hub, and the verify service.
   Selenium details [https://hub.docker.com/r/selenium/hub/]
 
   You will need to make the following updates to the docker-compose file.
   Environment variables:
   - TEST_URL=http://www
 
-    Test url needs to point to the system under test. You can use a docker internal url, or an external url that you control. Using automated test frameworks on sites you do not own is considered bad form.
+    Test url needs to point to the system under test. You can use a docker
+    internal url, or an external url that you control. Using automated test
+    frameworks on sites you do not own is considered bad form.
 
   Volumes:
   - ./example:/app/custom
@@ -54,11 +57,13 @@ To use Verification Reporter, you should first be familiar with [Docker](https:/
 
   - ./features
 
-    The [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin) features to test your application
+    The [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin) features to
+    test your application
 
   - ./pages
 
-    Where [nightwatch page objects](https://github.com/nightwatchjs/nightwatch/wiki/Page-Object-API) are located which can be used in the features
+    Where [nightwatch page objects](https://github.com/nightwatchjs/nightwatch/wiki/Page-Object-API)
+    are located which can be used in the features
 
   - ./output
 
@@ -66,7 +71,9 @@ To use Verification Reporter, you should first be familiar with [Docker](https:/
 
   - ./steps
 
-    This is where steps specific to your system under test will be accessed. Example steps include building out your database, or logging into your system.
+    This is where steps specific to your system under test will be accessed.
+    Example steps include building out your database, or logging into your
+    system.
 
 4. Build the application stack and start the services:
   ```
@@ -112,7 +119,7 @@ is usable by non-developers to prove the validity of the system under test.
 
 ## Configuration
 
-Configuration options are set through Docker environment variables, and
+Configuration options are set through Docker environment variables and
 can be seen in `/src/constants.js`.
 
 ## Contributing
@@ -122,5 +129,5 @@ branch. Pull requests are welcome.
 
 ## Licensing
 
-The code in this project is Copyright 2017 CodeBiosys, Inc., and licensed under the
-MIT license, and the specifics can be found in `LICENSE.md`.
+This project is Copyright 2017, CodeBiosys, Inc. under the MIT license.
+The specifics can be found in `LICENSE.md`.
