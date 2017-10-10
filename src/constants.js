@@ -4,8 +4,8 @@ module.exports = {
   SELENIUM_PORT: process.env.SELENIUM_PORT || 4444,
   SILENT: !process.env.VERBOSE || true,
   STEP_DIR: '/app/src/steps',
-  REPORT_OUTPUT_DIR: `/app/output/report`,
-  SCREEN_OUTPUT_DIR: `/app/output/screenshots`,
+  REPORT_OUTPUT_DIR: '/app/custom/output/report',
+  SCREEN_OUTPUT_DIR: '/app/custom/output/screenshots',
   CUSTOM_STEP_DIR: '/app/custom/steps',
   PAGES_DIR: '/app/custom/pages',
   FEATURE_DIR: '/app/custom/features',
@@ -14,4 +14,4 @@ module.exports = {
   TEST_ENVIRONMENT: process.env.TEST_ENVIRONMENT || 'DEVELOPMENT',
   BROWSER: process.env.BROWSER || 'Chrome',
   PLATFORM: process.env.PLATFORM || 'Linux',
-}
+};
