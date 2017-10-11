@@ -1,19 +1,21 @@
 import takeScreenshot from '../../../src/support/action/takeScreenshot';
 
-jest.mock('nightwatch-cucumber', () => (
-  {
-    client: {
-      url: jest.fn().mockReturnValue({
-        waitForElementVisible: jest.fn(),
-      }),
-      launch_url: 'http://example.com',
-    },
-  }
-));
-import { client } from 'nightwatch-cucumber';
+jest.mock('nightwatch-cucumber', () => ({
+  client: {
+    screenshot: (bool, callback) => { callback({ value: 'foo' }); return { then: () => {} }; },
+  },
+}));
+
+const attach = jest.fn();
+const world = {
+  takeScreenshot,
+  attach,
+};
 
 describe('takeScreenshot', () => {
-  it('should fail', () => {
-    expect(true).toBe(false);
+  it('a screenshot is taken', () => {
+    world.takeScreenshot();
+    expect(attach).toHaveBeenCalledTimes(1);
+    expect(attach).toHaveBeenCalledWith('foo', 'image/png');
   });
 });

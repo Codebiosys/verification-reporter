@@ -1,19 +1,13 @@
 import waitForVisible from '../../../src/support/action/waitForVisible';
 
-jest.mock('nightwatch-cucumber', () => (
-  {
-    client: {
-      url: jest.fn().mockReturnValue({
-        waitForElementVisible: jest.fn(),
-      }),
-      launch_url: 'http://example.com',
-    },
-  }
-));
-import { client } from 'nightwatch-cucumber';
+jest.mock('../../../src/support/action/waitTimeForVisible');
+
+import waitTimeForVisible from '../../../src/support/action/waitTimeForVisible';
 
 describe('waitForVisible', () => {
-  it('should fail', () => {
-    expect(true).toBe(false);
+  it('Wait for 3000 milliseconds', () => {
+    waitForVisible('.element', '');
+    expect(waitTimeForVisible).toHaveBeenCalledTimes(1);
+    expect(waitTimeForVisible).toHaveBeenCalledWith('.element', '', 3000);
   });
 });

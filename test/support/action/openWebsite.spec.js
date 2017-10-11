@@ -1,16 +1,14 @@
 import openWebsite from '../../../src/support/action/openWebsite';
 
-jest.mock('nightwatch-cucumber', () => (
-  {
-    client: {
-      url: jest.fn().mockReturnValue({
-        waitForElementVisible: jest.fn(),
-      }),
-      launch_url: 'http://example.com',
-    },
-  }
-));
+jest.mock('nightwatch-cucumber', () => ({ client: {} }));
 import { client } from 'nightwatch-cucumber';
+
+const waitForElementVisible = jest.fn();
+
+client.url = jest.fn().mockReturnValue({
+  waitForElementVisible,
+});
+client.launch_url = 'http://example.com';
 
 describe('openWebsite', () => {
   beforeEach(() => {
@@ -23,6 +21,9 @@ describe('openWebsite', () => {
     expect(client.url).toHaveBeenCalledTimes(1);
     expect(client.url)
       .toHaveBeenCalledWith('http://example2.com');
+    expect(waitForElementVisible).toHaveBeenCalledTimes(1);
+    expect(waitForElementVisible)
+      .toHaveBeenCalledWith('body', 1000);
   });
 
   it(
@@ -33,6 +34,9 @@ describe('openWebsite', () => {
       expect(client.url).toHaveBeenCalledTimes(1);
       expect(client.url)
         .toHaveBeenCalledWith('http://example.com/path/to/page');
+      expect(waitForElementVisible).toHaveBeenCalledTimes(1);
+      expect(waitForElementVisible)
+        .toHaveBeenCalledWith('body', 1000);
     },
   );
 
@@ -44,6 +48,9 @@ describe('openWebsite', () => {
       expect(client.url).toHaveBeenCalledTimes(1);
       expect(client.url)
         .toHaveBeenCalledWith('http://example.com/path/to/another/page');
+      expect(waitForElementVisible).toHaveBeenCalledTimes(1);
+      expect(waitForElementVisible)
+        .toHaveBeenCalledWith('body', 1000);
     },
   );
 });
