@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+example/custom/output/report/*
+!example/custom/output/report/.gitkeep
