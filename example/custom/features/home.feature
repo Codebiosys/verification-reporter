@@ -8,4 +8,5 @@ Feature: 1.1: Test the page title
 
     Scenario: 1.1.1: Test if the demo app has the title "Hello World"
         Then the title is "Hello World"
+        Then the element "h1" does contain the text "Hello World"
         Then take a screen shot
