@@ -7,14 +7,17 @@
   "private": true,
   "scripts": {
     "verify": "nightwatch -c /app/src/nightwatch.config",
-    "report": "node /app/src/report.js"
+    "report": "node /app/src/report.js",
+    "test:unit": "jest --config=jest.json"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
     "eslint": "^4.7.2",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1"
+    "eslint-plugin-node": "^5.1.1",
+    "jest": "^21.2.1"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",

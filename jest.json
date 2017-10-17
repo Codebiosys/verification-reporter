@@ -1,0 +1,28 @@
+
+{
+
+  "clearMocks": true,
+  "collectCoverage": true,
+  "coverageDirectory": "./coverage",
+  "mapCoverage": true,
+  "collectCoverageFrom": [
+    "src/**/*.js",
+    "!**/node_modules/**"
+  ],
+  "notify": true,
+  "setupTestFrameworkScriptFile": "./test/setup.js",
+  "roots": [
+    "test/"
+  ],
+  "transform": {
+    "^.+\\.js$": "babel-jest"
+  },
+  "coverageThreshold": {
+     "global": {
+       "branches": 100,
+       "functions": 100,
+       "lines": 100,
+       "statements": 100
+     }
+   }
+}
