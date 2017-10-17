@@ -58,4 +58,4 @@ typings/
 .env
 
 example/custom/output/report/*
-!example/custom/output/report/.gitkeep
+!**/.gitkeep
