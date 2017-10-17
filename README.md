@@ -90,12 +90,17 @@ To use Verification Reporter, you should first be familiar with [Docker](https:/
   > docker-compose run verify yarn run report
   ```
 
+
 You should now see a report in your mounted output volume.
 
 ## Developing
 
 Custom Gherkin steps needed for your application should be placed in the
 ./steps directory.
+
+For debug purposes, you can watch the chrome selenium by entering the
+docker-machine ip, port 5900 in safari. Example: vnc://192.168.99.100:5900
+The password is 'secret'.
 
 ### Building
 
