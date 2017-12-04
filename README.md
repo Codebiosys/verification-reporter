@@ -3,12 +3,14 @@
 > the project works for you before using it.
 
 # Verification Reporter
-> Verification Report Generation for Clinical and Non-Clinical Systems
+> Verification Report Generation for Clinical and Non-Clinical Systems.
 
 Verification Reporter is a testing framework that can test a web-based system
 programmatically and output a report for inclusion in validation documentation.
 The purpose of Verification Reporter is to help automate the validation process
-encountered in clinical systems, especially regressive validations. Verification Reporter can reduce the time it takes for groups with regulatory requirements to introduce new software versions into their pipelines/workflows.
+encountered in clinical systems, especially regressive validations. Verification
+Reporter can reduce the time it takes for groups with regulatory requirements to
+introduce new software versions into their pipelines/workflows.
 
 Verification Reporter is a Docker-based project that uses test scenarios to
 based in [cucumberjs]([https://github.com/cucumber/cucumber-js) and
@@ -17,7 +19,8 @@ to produce an html report.
 
 ## Installing / Getting started
 
-To use Verification Reporter, you should first be familiar with [Docker](https://www.docker.com/).
+To use Verification Reporter, you should first be familiar with [Docker]
+(https://www.docker.com/).
 
 1. Clone the application:
 
@@ -62,7 +65,8 @@ To use Verification Reporter, you should first be familiar with [Docker](https:/
 
   - ./pages
 
-    Where [nightwatch page objects](https://github.com/nightwatchjs/nightwatch/wiki/Page-Object-API)
+    Where [nightwatch page objects
+    (https://github.com/nightwatchjs/nightwatch/wiki/Page-Object-API)
     are located which can be used in the features
 
   - ./output
