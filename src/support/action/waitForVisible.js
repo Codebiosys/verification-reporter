@@ -4,6 +4,4 @@ import waitTimeForVisible from './waitTimeForVisible';
  * @param  {String}   element   Element selector
  * @param  {String}   falseCase Check for a visible or a hidden element
  */
-export default (element, falseCase) => {
-  waitTimeForVisible(element, falseCase, 3000);
-};
+export default (element, falseCase) => waitTimeForVisible(element, falseCase, 3000);

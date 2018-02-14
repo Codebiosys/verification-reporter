@@ -1,5 +1,2 @@
-import { defineSupportCode } from 'cucumber';
+import { After, Before } from 'cucumber';
 import { client } from 'nightwatch-cucumber';
-
-defineSupportCode(({ After, Before }) => {
-});

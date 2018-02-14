@@ -9,8 +9,7 @@ import isNegated from '../lib/isNegated';
  */
 export default (element, falseCase, seconds) => {
   if (isNegated(falseCase)) {
-    client.waitForElementNotVisible(element, parseInt(seconds, 10) * 1000); // 3 seconds
-  } else {
-    client.waitForElementVisible(element, parseInt(seconds, 10) * 1000); // 3 seconds
+    return client.waitForElementNotVisible(element, parseInt(seconds, 10) * 1000); // 3 seconds
   }
+  return client.waitForElementVisible(element, parseInt(seconds, 10) * 1000); // 3 seconds
 };

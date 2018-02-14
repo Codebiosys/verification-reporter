@@ -5,9 +5,7 @@ import { client } from 'nightwatch-cucumber';
  * @param  {String}   screenWidth  The width of the window to resize to
  * @param  {String}   screenHeight The height of the window to resize to
  */
-export default (screenWidth, screenHeight) => (new Promise((resolve) => {
-  client.resizeWindow(
-    parseInt(screenWidth, 10),
-    parseInt(screenHeight, 10),
-  ).then(resolve);
-}));
+export default (screenWidth, screenHeight) => (new Promise(resolve => client.resizeWindow(
+  parseInt(screenWidth, 10),
+  parseInt(screenHeight, 10),
+).then(resolve)));

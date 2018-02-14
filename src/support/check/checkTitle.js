@@ -10,18 +10,13 @@ import isNegated from '../lib/isNegated';
  */
 export default function (falseCase, expectedTitle) {
   if (isNegated(falseCase)) {
-    client.getTitle((title) => {
-      expect(title).not.to.equal(
-        expectedTitle,
-        `Expected title not to be "${expectedTitle}"`,
-      );
-    });
-  } else {
-    client.getTitle((title) => {
-      expect(title).to.equal(
-        expectedTitle,
-        `Expected title to be "${expectedTitle}" but found "${title}"`,
-      );
-    });
+    return client.getTitle(title => expect(title).not.to.equal(
+      expectedTitle,
+      `Expected title not to be "${expectedTitle}"`,
+    ));
   }
+  return client.getTitle(title => expect(title).to.equal(
+    expectedTitle,
+    `Expected title to be "${expectedTitle}" but found "${title}"`,
+  ));
 }

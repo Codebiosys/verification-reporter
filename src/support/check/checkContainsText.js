@@ -10,14 +10,13 @@ import isNegated from '../lib/isNegated';
  */
 export default function (elementName, falseCase, expectedText) {
   if (isNegated(falseCase)) {
-    client.expect.element(elementName).text.to.not.contain(
+    return client.expect.element(elementName).text.to.not.contain(
       expectedText,
       `Expected the element "${elementName}" to not to have text "${expectedText}, but it did."`,
     );
-  } else {
-    client.expect.element(elementName).text.to.contain(
-      expectedText,
-      `Expected the element "${elementName}" to have text "${expectedText}, but it did not."`,
-    );
   }
+  return client.expect.element(elementName).text.to.contain(
+    expectedText,
+    `Expected the element "${elementName}" to have text "${expectedText}, but it did not."`,
+  );
 }

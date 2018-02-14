@@ -6,3 +6,5 @@ env:
 plugins:
   - import
   - node
+rules:
+  jsx-a11y/href-no-hash: 0

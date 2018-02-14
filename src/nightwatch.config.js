@@ -11,7 +11,7 @@ const {
   SCREEN_OUTPUT_DIR,
   CUSTOM_STEP_DIR,
   PAGES_DIR,
-  FEATURE_DIR
+  FEATURE_DIR,
 } = require('./constants');
 
 require('nightwatch-cucumber')({
