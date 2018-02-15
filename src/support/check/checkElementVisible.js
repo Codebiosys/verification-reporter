@@ -1,3 +1,4 @@
+
 import { client } from 'nightwatch-cucumber';
 import isNegated from '../lib/isNegated';
 
@@ -7,9 +8,15 @@ import isNegated from '../lib/isNegated';
  * @param  {String}   element   Element selector
  * @param  {String}   falseCase Check for a visible or a hidden element
  */
-export default (seconds, element, falseCase) => {
+export default (elementName, falseCase) => {
   if (isNegated(falseCase)) {
-    return client.waitForElementNotVisible(element, parseInt(seconds, 10) * 1000); // 3 seconds
+    return client.assert.hidden(
+      elementName,
+      `Expected the element "${elementName}" to be present and hidden, but it was neither."`,
+    );
   }
-  return client.waitForElementVisible(element, parseInt(seconds, 10) * 1000); // 3 seconds
+  return client.assert.visible(
+    elementName,
+    `Expected the element "${elementName}" to be present, but it was not."`,
+  );
 };
